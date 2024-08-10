@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+  color: #333;
+  font-family: "Times New Roman", Times, serif;
+}
+.nav-bar {
+  text-align: center;
+  border-bottom: 2px solid #333;
+  padding: 15px;
+  margin-bottom: 0;
+}
+.name {
+  font-size: 35px;
+}
+.spiral {
+  font-size: 40px;
+  animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.info-bar {
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.show{
+  visibility: visible;
+}
+.game-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin: 10px auto;
+  width: 100%;
+  max-width: 300px;
+  row-gap: 10px;
+  column-gap: 5px;
+}
+.word-letter {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+  border: 3px solid #ccc;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.correct {
+  background-color: darkgreen;
+  color: white;
+}
+
+.close {
+  background-color: goldenrod;
+  color: white;
+}
+
+.wrong {
+  background-color: #888;
+  color: white;
+}
+
+.invalid {
+  animation: flash 1s;
+}
+@keyframes flash {
+  5% {
+    border-color: crimson;
+  }
+
+  100% {
+    border-color: #ccc;
+  }
+}
+
+@keyframes rainbow {
+  100%,
+  0% {
+    color: rgb(255, 0, 0);
+  }
+  8% {
+    color: rgb(255, 127, 0);
+  }
+  16% {
+    color: rgb(255, 255, 0);
+  }
+  25% {
+    color: rgb(127, 255, 0);
+  }
+  33% {
+    color: rgb(0, 255, 0);
+  }
+  41% {
+    color: rgb(0, 255, 127);
+  }
+  50% {
+    color: rgb(0, 255, 255);
+  }
+  58% {
+    color: rgb(0, 127, 255);
+  }
+  66% {
+    color: rgb(0, 0, 255);
+  }
+  75% {
+    color: rgb(127, 0, 255);
+  }
+  83% {
+    color: rgb(255, 0, 255);
+  }
+  91% {
+    color: rgb(255, 0, 127);
+  }
+}
+.winner {
+  animation: rainbow 4s linear infinite;
+}
